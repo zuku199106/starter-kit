@@ -1,4 +1,4 @@
-var 
+var
   gulp = require('gulp'),
   pug = require('gulp-pug'),
   sass = require('gulp-sass');
@@ -6,15 +6,15 @@ var
 gulp.task('default', ['sass','pug'], function() {
   console.log("Sass + Pug without watch");
 });
- 
+
 gulp.task('sass', function () {
-  return gulp.src('./src/sass/*.sass')
+  return gulp.src('./src/sass/**/*.sass')
     .pipe(sass().on('error', sass.logError))
     .pipe(gulp.dest('./dist/css'));
 });
- 
+
 gulp.task('sass:watch', function () {
-  gulp.watch('./src/sass/*.sass', ['sass']);
+  gulp.watch('./src/sass/**/*.sass', ['sass']);
 });
 
 gulp.task('pug', function buildHTML() {
